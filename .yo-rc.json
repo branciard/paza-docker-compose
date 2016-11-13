@@ -1,0 +1,13 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "paza-asset-bdd-srv",
+      "paza-gateway"
+    ],
+    "directoryPath": "../",
+    "useElk": true,
+    "serviceDiscoveryType": "eureka",
+    "adminPassword": "--pazaSchouck01",
+    "jwtSecretKey": "0d1974df88cfc44cec956e0644c57b6172c0a4a1"
+  }
+}
