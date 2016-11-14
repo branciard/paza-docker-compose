@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c079a1c4-f315-46dd-8031-3bd006b770ef" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose-full-logs.yml" afterPath="$PROJECT_DIR$/docker-compose-full-logs.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose-uua-only.yml" afterPath="$PROJECT_DIR$/docker-compose-uua-only.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhipster-registry.yml" afterPath="$PROJECT_DIR$/jhipster-registry.yml" />
     </list>
     <ignored path="paza-docker-compose.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -278,7 +280,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="257" y="127" width="1023" height="584" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
