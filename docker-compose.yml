@@ -26,7 +26,7 @@ services:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - SPRING_CLOUD_CONFIG_URI=http://admin:--pazaSchouck01@registry:8761/config
             - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/pazaassetbddsrv
-            - JHIPSTER_SLEEP=320
+            - JHIPSTER_SLEEP=90
     pazaassetbddsrv-postgresql:
         container_name: pazaassetbddsrv-postgresql
         image: postgres:9.5.4
@@ -44,7 +44,7 @@ services:
             - SPRING_CLOUD_CONFIG_URI=http://admin:--pazaSchouck01@registry:8761/config
             - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/pazagateway
             - SPRING_DATA_CASSANDRA_CONTACTPOINTS=cassandra
-            - JHIPSTER_SLEEP=330
+            - JHIPSTER_SLEEP=90
         ports:
             - 8484:8484
     pazagateway-postgresql:
@@ -53,6 +53,35 @@ services:
         environment:
             - POSTGRES_USER=pazagateway
             - POSTGRES_PASSWORD=
+
+    pazachaingateway-app:
+        image: pazachaingateway
+        external_links:
+            - pazachaingateway-postgresql:postgresql
+            - jhipster-registry:registry
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:--pazaSchouck01@registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/pazachaingateway
+            - SPRING_DATA_CASSANDRA_CONTACTPOINTS=cassandra
+            - JHIPSTER_SLEEP=90 # gives time for uaa and the cassandra cluster to start and execute the migration scripts
+        ports:
+            - 8485:8485
+    pazachaingateway-postgresql:
+        container_name: pazachaingateway-postgresql
+        image: postgres:9.5.4
+        environment:
+            - POSTGRES_USER=pazachaingateway
+            - POSTGRES_PASSWORD=
+
+    pazachainfabricsdksrv-app:
+        image: pazachainfabricsdksrv
+        external_links:
+            - jhipster-registry:registry
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:--pazaSchouck01@registry:8761/config
+            - JHIPSTER_SLEEP=90 # gives time for the database to boot before the application
     
     jhipster-registry:
         extends:
